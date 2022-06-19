@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+    font-family: "dinnextltarabic";
+    src: url("../public/fonts/dinnextltarabicregular.woff2");
+}
