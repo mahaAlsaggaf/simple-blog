@@ -1,4 +1,3 @@
-import Layout, { siteTitle } from '../components/Layouts/layout'
 import Navbar from "../components/Navbars/DesktopNavigation";
 import Footer from "../components/Footers/Footer";
 import HeaderHome from '../components/Headers/HeaderHome';

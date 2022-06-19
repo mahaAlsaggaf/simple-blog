@@ -38,7 +38,7 @@ export default class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
 
-    const Layout = Component.layout || (({ children }) => <>{children}</>);
+    // const Layout = Component.layout || (({ children }) => <>{children}</>);
 
     return (
       <React.Fragment>
@@ -47,11 +47,11 @@ export default class MyApp extends App {
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
-          <title>Salla Assignment</title>
+          <title>Simple Blog</title>
         </Head>
-        <Layout>
+        {/* <Layout> */}
           <Component {...pageProps} />
-        </Layout>
+        {/* </Layout> */}
       </React.Fragment>
     );
   }
