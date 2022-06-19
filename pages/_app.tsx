@@ -4,8 +4,10 @@ import ReactDOM from "react-dom";
 import App from "next/app";
 import Head from "next/head";
 import Router from "next/router";
+import "../styles/tailwind.css";
 
 import PageChange from "../components/PageChange/PageChange";
+
 
 
 Router.events.on("routeChangeStart", (url) => {

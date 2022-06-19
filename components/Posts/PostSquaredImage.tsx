@@ -10,7 +10,7 @@ export default function PostSquaredImage() {
       <section>
         <div className="relative container mx-auto p-6 text-darkgray">
           <div className="flex justify-between">
-            <a href="#" className="text-darkgray text-sm active:underline-offset-8 active:underline active:text-teal hover:underline-offset-8 hover:underline hover:text-teal"> <MdKeyboardArrowLeft size='10'/> عرض المزيد </a>   
+            <a href="#" className="inline text-darkgray text-sm active:underline-offset-8 active:underline active:text-teal hover:underline-offset-8 hover:underline hover:text-teal"> <MdKeyboardArrowLeft className="inline" size='10'/> عرض المزيد </a>   
             <span className="text-darkgray text-xl"> الأكثر قراءة </span>
   
           </div>
