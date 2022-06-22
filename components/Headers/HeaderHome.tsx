@@ -26,7 +26,7 @@ export default function HeaderHome() {
             {/* Text item */}
             <div className="container relative mx-auto">
               <div className="items-center flex flex-wrap">
-                <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-end ">
+                <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-start ">
                   <div className="pr-2 border-r-2 border-teal ">
                     <h1 className="text-white text-5xl ">
                     مركز المدونة

@@ -1,7 +1,8 @@
-import React from "react";
+import React, {useState} from "react";
 import Image from 'next/image'
+import Link from 'next/link'
 import { BsMoon, BsSearch } from 'react-icons/bs';
-// import useDarkMode from '../../hooks/useDarkMode';
+import useDarkMode from '../../hooks/useDarkMode.js';
 
 
 // components
@@ -14,17 +15,24 @@ export function DesktopNavigation(props) {
     <nav className="relative container mx-auto p-6 text-darkgray bg-white">
           {/* Flex container */}
           <div className="flex items-center justify-around">
-            {/* Buttons */}
-            <ul className="hidden md:flex">
-                <li className='rounded-full ring-1 ring-lightgray my-auto p-2 mx-1'><a className='bg-lightergray text-secondary'> <BsMoon size='10'/></a></li>
-                <li className='rounded-full ring-1 ring-lightgray my-auto p-2 mx-1'><a className='bg-lightergray text-secondary'> <BsSearch size='10'/></a></li>
-            </ul>
+            {/* Logo */}
+            <div className="pt-2">
+                <img src="/images/logo-light-mood.png" width="90px" height="30px" alt="" />
+              </div>
+           
             
             {/* Menu Items */}
+            
             <div className="hidden space-x-6 md:flex">
-                <a href="#" className="text-darkgray active:underline-offset-8 active:underline active:text-teal hover:underline-offset-8 hover:underline hover:text-teal text-base font-medium"> المقالات </a>
-                <a href="#" className="text-darkgray active:underline-offset-8 active:underline active:text-teal hover:underline-offset-8 hover:underline hover:text-teal text-base font-medium"> التقارير والدراسات </a>
-                <a href="#" className="text-darkgray active:underline-offset-8 active:underline active:text-teal hover:underline-offset-8 hover:underline hover:text-teal text-base font-medium"> الرئيسية </a>
+                <Link href="/">
+                    <a href="#" className="text-darkgray active:underline-offset-8 active:underline active:text-teal hover:underline-offset-8 hover:underline hover:text-teal text-base font-medium"> الرئيسية </a>
+                </Link>
+                <Link href="/reports">
+                    <a href="#" className="text-darkgray active:underline-offset-8 active:underline active:text-teal hover:underline-offset-8 hover:underline hover:text-teal text-base font-medium"> التقارير والدراسات </a>
+                </Link>
+                <Link href="/posts">
+                    <a href="#" className="text-darkgray active:underline-offset-8 active:underline active:text-teal hover:underline-offset-8 hover:underline hover:text-teal text-base font-medium"> المقالات </a>
+                </Link>
             </div>
 
             {/* Hamburger Icon */}
@@ -37,10 +45,12 @@ export function DesktopNavigation(props) {
               <span className="hamburger-bottom"></span>
             </button>
 
-              {/* Logo */}
-              <div className="pt-2">
-                <img src="/images/logo-light-mood.png" width="90px" height="30px" alt="" />
-              </div>
+             {/* Buttons */}
+             <ul className="hidden md:flex">
+                <li className='rounded-full ring-1 ring-lightgray my-auto p-2 mx-1'><a className='bg-lightergray text-secondary'> <BsMoon size='10'/></a></li>
+                <li className='rounded-full ring-1 ring-lightgray my-auto p-2 mx-1'><a className='bg-lightergray text-secondary'> <BsSearch size='10'/></a></li>
+            </ul>
+              
           </div>
 
           {/* Mobile Menu */}
@@ -63,19 +73,19 @@ export function DesktopNavigation(props) {
 
 
 // set up the dark mood effect
-// const ThemeIcon = () => {
-//   const [darkTheme, setDarkTheme] = useDarkMode();
-//   const handleMode = () => setDarkTheme(!darkTheme);
-//   return (
-//     <span onClick={handleMode}>
-//       {/* {darkTheme ? (
-//         <FaMoon size='24' className='top-navigation-icon' />
-//         ) : (
-//         <FaMoon size='24' className='top-navigation-icon' />
-//       )} */}
-//     </span>
-//   );
-// };
+const ThemeIcon = () => {
+  const [darkTheme, setDarkTheme] = useDarkMode();
+  const handleMode = () => setDarkTheme(!darkTheme);
+  return (
+    <span onClick={handleMode}>
+      {darkTheme ? (
+        <BsMoon size='24' className='top-navigation-icon' />
+      ) : (
+        <BsMoon size='24' className='top-navigation-icon' />
+      )}
+    </span>
+  );
+};
 
 // define the search popup element
 const Search = () => (

@@ -1,13 +1,13 @@
 import React from "react";
+import Link from 'next/link'
+
 
 // components
 
-export default function PostBannerImage() {
+export default function PostBannerImage({posts}) {
   return (
     <>
-      {/* Banner Section */}
-      <section id="hero">
-            {/* Flex Container */}
+          {posts.map((post) => (
             <div
               className="relative pt-8 pb-8 container mx-auto">
               {/* Background image */}
@@ -15,7 +15,7 @@ export default function PostBannerImage() {
                   className="absolute top-0 w-full h-full bg-center bg-cover"
                   style={{
                     backgroundImage:
-                      "url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80')",
+                    `url(${post.postItemImg})`,
                   }}
               ></div>
               <span
@@ -25,30 +25,41 @@ export default function PostBannerImage() {
               {/* Text item */}
               <div className="container relative mx-auto">
                 <div className="items-center flex flex-wrap">
-                  <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-end ">
+                  <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-start ">
                     <div className="p-4">
                       <div className="border-r-2 border-teal ">
                         <h2 className="mr-1 text-sm text-white mb-4">
-                          افكار البزنس
+                          <Link href={`/posts/${post.postId}`}>
+                            <a
+                              className="hover:underline hover:text-teal"
+                              dangerouslySetInnerHTML={{ __html: post.postCat }}
+                            />
+                          </Link>
                         </h2>
                       </div>
                       
                       <h1 className="text-4xl text-white mb-4">
-                        ماهو مستقبل التجارة الالكترونية
+                        <Link href={`/posts/${post.postId}`}>
+                          <a
+                            className="hover:underline hover:text-teal"
+                            dangerouslySetInnerHTML={{ __html: post.postTitle }}
+                          />
+                        </Link>
                       </h1>
-                      <p className="text-2xl text-white mb-4">
-                      إلى 4.5 تريليون في عام 2021 المبيعات من 1.3 تريليون في عام 2014 أن تزيد أكثر من ذلك  
+                      <p className="text-2xl text-white mb-4" 
+                        dangerouslySetInnerHTML={{ __html: post.postExcerpt }}>
                       </p>
 
-                      <h2 className="mr-1 text-sm text-white mb-1">
-                          بواسطة عبدالله عادل
+                      <h2 className="mr-1 text-sm text-white mb-1" 
+                        dangerouslySetInnerHTML={{ __html: post.postDate }}>
                       </h2>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </section>
+          ))}
+
     </>
   );
 }

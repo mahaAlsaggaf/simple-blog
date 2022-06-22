@@ -7,3 +7,8 @@
     font-family: "dinnextltarabic";
     src: url("../public/fonts/dinnextltarabicregular.woff2");
 }
+
+section.section{
+    padding: 2rem;
+ 
+}
