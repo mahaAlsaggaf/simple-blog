@@ -11,23 +11,35 @@ import useDarkMode from '../../hooks/useDarkMode.js';
 export function DesktopNavigation(props) {
 
   const [collapseClass, setcollapseClass] = useState("collapse navbar-collapse");
+  const [darkMoodClass, setdarkMoodClass] = useState("navbar navbar-expand-lg navbar-light bg-white");
+  const [darkMoodLogoPath, setdarkMoodLogoPath] = useState("/images/logo-light-mood.png");
 
-  const handleCollapsepButtonClick = (async) => {
+
+  const handleCollapsepButtonClick = () => {
      if (collapseClass == "show collapse navbar-collapse"){
       setcollapseClass("collapse navbar-collapse"); 
      }else{
       setcollapseClass("show collapse navbar-collapse" ); 
      }
   };
+  const handleDarkMoodButtonClick = () => {
+    if (darkMoodClass == "navbar navbar-expand-lg navbar-light bg-white"){
+      setdarkMoodClass("navbar navbar-expand-lg navbar-dark bg-dark"); 
+      setdarkMoodLogoPath("/images/logo-dark-mood.png");
+    }else{
+      setdarkMoodClass("navbar navbar-expand-lg navbar-light bg-white" ); 
+      setdarkMoodLogoPath("/images/logo-light-mood.png");
+    }
+ };
   
   return (
     <>
     {/* Nav bar  */}
-    <nav className="navbar navbar-expand-lg navbar-light bg-white">
+    <nav className={darkMoodClass}>
       <div className="container">
         <Link href="/">
           <a href="/" className="navbar-brand">
-              <img src="/images/logo-light-mood.png" width="90px" height="30px" alt="" />
+              <img src={darkMoodLogoPath} width="90px" height="30px" alt="" />
           </a>
         </Link>
         <button onClick={handleCollapsepButtonClick} className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,7 +47,7 @@ export function DesktopNavigation(props) {
         </button>
 
         <div className={collapseClass} id="navbarsExample07">
-          <ul className="text-center navbar-nav me-auto mb-2 mb-lg-0">
+          <ul className="text-center navbar-nav mb-2 mb-lg-0">
             <li className="nav-item">
               <Link href="/"><a className="nav-link" aria-current="page" href="#">الرئيسية</a></Link>
             </li>
@@ -46,8 +58,8 @@ export function DesktopNavigation(props) {
               <Link href="/archive"><a className="nav-link">المقالات</a></Link>
             </li>
           </ul>
-          <div className="text-center text-lg-end">
-            <button type="button" className="mx-1 circle btn btn-outline-light text-secondary"><BsMoon className="" size='14'/></button>
+          <div className="text-center me-auto text-lg-end">
+            <button onClick={handleDarkMoodButtonClick} type="button" className="mx-1 circle btn btn-outline-light text-secondary"><BsMoon className="" size='14'/></button>
             <button type="button" className="mx-1 circle btn btn-outline-light text-secondary"><BsSearch className="" size='14'/></button>
           </div>
         </div>

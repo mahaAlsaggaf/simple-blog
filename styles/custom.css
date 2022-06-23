@@ -28,13 +28,20 @@ body{
     background-repeat: no-repeat!important;
     background-size: contain!important;
     background-position: center center!important;
+    
 }
 
-hr {
+hr.section {
     margin-top: 1rem;
     margin-bottom: 1rem;
     border: 0;
     border-top: 3px solid #cccccc;
+}
+hr.div {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid #cccccc;
 }
 
 section {
@@ -46,10 +53,13 @@ section {
     width: 2px;
     margin-left: 0.5rem;
 }
-
-.foorter-vr{
-    color: 808686; 
-    height: 50px; 
+.vr-footer{
+    border-left: 1px solid #cccccc;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    display: inline-block;
+    align-self: stretch;
+    min-height: 100%;
 }
 
 button.bg-orange{
@@ -89,6 +99,7 @@ p .text-white{
 }
 .post-bg-overlay> .card-body >h5 >a,
 .post-bg-overlay> .card-body >h6 >a,
+.post-bg-overlay> .card-body >h2,
 .post-bg-overlay> .card-body >h6,
 .post-bg-overlay> .card-body >p{
     color: #fff; 

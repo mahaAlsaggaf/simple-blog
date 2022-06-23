@@ -40,13 +40,16 @@ export default function Footer() {
                     <a href="#" className="darkgray hover:text-teal  mx-1" target="_blank" rel="noopener noreferrer">لشركة مدونة 2022  </a>
                   </span>
                 </div>
-                <div className="col-lg-4 col-sm-12 text-center py-2" >
+                <div className="col-lg-4 col-sm-12 text-center" >
+                  <div className="d-lg-inline d-md-inline">
                     <a className='mx-1 circle btn btn-outline-light text-secondary'> <GoMail size='16' /></a>
                     <a className='mx-1 circle btn btn-outline-light text-secondary'><FiFacebook size='16' /></a>
                     <a className='mx-1 circle btn btn-outline-light text-secondary'> <FiInstagram size='16'/></a>
                     <a className='mx-1 circle btn btn-outline-light text-secondary'><FiTwitter size='16'/></a>
-                    {/* <div className="foorter-vr vr d-lg-inline-block d-none"></div>  */}
+                  </div>
+                  <div className="d-lg-inline d-md-inline my-3"> 
                     <button className="mt-sm-3 mt-md-3 text-white bg-orange border-0 px-5 py-2 rounded text-sm">كن كاتباً معنا</button> 
+                  </div>
                 </div>
                 <div className="col-lg-4 col-sm-12 text-center py-2" >
                   <span className="hover:text-teal text-sm"> 

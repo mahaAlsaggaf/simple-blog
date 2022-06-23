@@ -15,7 +15,7 @@ export default function PostSquaredImage({
         <div className="col">
           <div className="bg-image img-fluid post-bg-overlay h-100" style={{
             background:`linear-gradient(rgba(148, 146, 146, 0.7), rgba(0, 0, 0, 0.9)),url(${post.postItemImg})`}}> 
-            <div className="card-body">
+            <div style={{paddingTop: "75%;"}} className="card-body">
               <h6 className="text-sm mb-4 ">
                 <Link href={`/posts/${post.postId}`}>
                   <a

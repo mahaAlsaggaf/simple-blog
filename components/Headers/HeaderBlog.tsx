@@ -24,13 +24,12 @@ export default function HeaderBlog({post, location} ) {
                       / المقالات
                   </p>
                   <h2 className="mb-0">
-                  أصبحت تغليف المنتجات أكثر أهمية من أي وقت مضى
-                    {/* <Link href={`/posts/${post.postId}`}>
+                    <Link href={`/posts/${post.postId}`}>
                       <a
-                        className="hover:underline hover:text-teal"
+                        className="text-white"
                         dangerouslySetInnerHTML={{ __html: post.postTitle }}
                       />
-                    </Link> */}
+                    </Link>
                   </h2>
                   {/* <p className="card-text my-2"  
                     dangerouslySetInnerHTML={{ __html: post.postExcerpt }}>

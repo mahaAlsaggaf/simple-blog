@@ -15,7 +15,7 @@ export default function Avatar({ author }) {
       </div>
       <p className="text-white relative mx-1">بواسطة: ابو جود</p>
       <span style={{color:"#fff"}} className="h-50 vr mx-2 "></span>
-      <p className="text-white relative mx-1">منذ ١٤/٠٤/٢٠٢٢</p>
+      <p className="text-white relative mx-1">منذ 1/24/2022</p>
     </div>
   )
 }
