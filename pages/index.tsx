@@ -1,14 +1,16 @@
-import Head from 'next/head'
-import Container from '../components/Container'
+import Head from 'next/head'; 
+// import Container from '../components/Container'; 
 import { MdKeyboardArrowLeft } from 'react-icons/md';
 import Link from 'next/link'
 
-// import MoreStories from '../components/more-stories'
 import PostSquaredImage from '../components/Posts/PostSquaredImage'; 
 import PostSideImage from '../components/Posts/PostSideImage'; 
 import PostUpperImage from '../components/Posts/PostUpperImage'; 
 import PostBannerImage from '../components/Posts/PostBannerImage'; 
 import PostText from '../components/Posts/PostText'; 
+
+import Navbar from "../components/Navbars/DesktopNavigation";
+import Footer from "../components/Footers/Footer";
 
 
 import SectionSeparator from '../components/SectionSeparator';
@@ -16,7 +18,7 @@ import SectionSeparator from '../components/SectionSeparator';
 
 import HeaderHome from '../components/Headers/HeaderHome';
 
-import Layout from '../components/Layouts/Layout'; 
+// import Layout from '../components/Layouts/Layout'; 
 import { getBlogPosts, getMostReadPosts } from '../lib/api'
 import { SITE_NAME } from '../lib/constants'
 
@@ -27,15 +29,17 @@ export default function Index({ allPosts}) {
 
   return (
     //   <></>
-    <Layout>
+    // <Layout>
+    <div style={{background: "#FCFCFC"}} dir="rtl" className="font-dinnextltarabic">
+        <div id="page-transition"></div>
+        <Navbar />
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Simple Next.js Blog The Presents Scraped Data from {SITE_NAME}</title>
       </Head>
         {/* // the hero header // pass the value of the first post only  */}
         <HeaderHome />
-      <Container>
-        {/* // the most reading posts // pass three posts values  */}
+      <div className="py-5 container">        {/* // the most reading posts // pass three posts values  */}
         <section className="section">
             <div className="container mb-2">
                 <div className="d-flex justify-content-between">
@@ -116,8 +120,9 @@ export default function Index({ allPosts}) {
           </div>
         </section>
 
-      </Container>
-    </Layout>
+      </div>
+      <Footer />
+    </div>
   )
 }
 

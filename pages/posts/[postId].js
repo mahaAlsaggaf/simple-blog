@@ -1,14 +1,15 @@
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import Head from 'next/head'
-import Container from '../../components/Container'
-import Layout from '../../components/Layouts/Layout'; 
+// import Container from '../../components/Container'
+// import Layout from '../../components/Layouts/Layout'; 
 import PostBody from '../../components/PostBody'; 
 import HeaderBlog from '../../components/Headers/HeaderBlog'; 
 import CommentList from '../../components/Comments/CommentList'; 
 
 
-
+import Navbar from "../../components/Navbars/DesktopNavigation";
+import Footer from "../../components/Footers/Footer";
 
 
 import { SITE_NAME } from '../../lib/constants'
@@ -22,22 +23,25 @@ export default function Post({ post }) {
 
   return (
    
-    <Layout>
+    <div style={{background: "#FCFCFC"}} dir="rtl" className="font-dinnextltarabic">
+    <div id="page-transition"></div>
+    <Navbar />
       <Head>
         <title>Simple Next.js Blog The Presents Scraped Data from {SITE_NAME}</title>
       </Head>
         {/* // the hero header // pass the value of the first post only  */}
         <HeaderBlog post={post} />
-        <Container>
-        {router.isFallback ? (
+        <div className="py-5 container">
+          {router.isFallback ? (
           <h1>Loading…</h1>
         ) : (
           <>
             <PostBody content={post.postContent} /> 
           </>
         )}
-      </Container>
-    </Layout>
+      </div>
+      <Footer />
+    </div>
   )
 }
 

@@ -11,7 +11,7 @@ export default function PostSquaredImage({
 }) {
   return (
     <>
-        {mostReadPosts.map((post) => (
+      {mostReadPosts.map((post) => (
         <div className="col">
           <div className="bg-image img-fluid post-bg-overlay h-100" style={{
             background:`linear-gradient(rgba(148, 146, 146, 0.7), rgba(0, 0, 0, 0.9)),url(${post.postItemImg})`}}> 

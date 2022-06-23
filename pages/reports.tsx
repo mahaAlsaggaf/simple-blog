@@ -1,12 +1,14 @@
 import Head from 'next/head'
-import Container from '../components/Container'
+// import Container from '../components/Container'
 import { MdKeyboardArrowLeft } from 'react-icons/md';
 
 // import MoreStories from '../components/more-stories'
 import PostUpperImage from '../components/Posts/PostUpperImage'; 
 
+import Navbar from "../components/Navbars/DesktopNavigation";
+import Footer from "../components/Footers/Footer";
 
-import Layout from '../components/Layouts/Layout'; 
+// import Layout from '../components/Layouts/Layout'; 
 import { getBlogPosts, getMostReadPosts } from '../lib/api'
 import { SITE_NAME } from '../lib/constants'
 
@@ -17,12 +19,13 @@ export default function Reports({allPosts}) {
 
   return (
     //   <></>
-    <Layout>
+    <div style={{background: "#FCFCFC"}} dir="rtl" className="font-dinnextltarabic">
+    <Navbar />
       <Head>
         <title>Simple Next.js Blog The Presents Scraped Data from {SITE_NAME}</title>
       </Head>
         {/* // the hero header // pass the value of the first post only  */}
-      <Container>
+        <div className="py-5 container">        {/* // the most reading posts // pass three posts values  */}
         {/* // the most reading posts // pass three posts values  */}
         <section className="section">
             <div className="relative container mx-auto my-5">
@@ -40,8 +43,9 @@ export default function Reports({allPosts}) {
               </div>
             </div>
         </section> 
-      </Container>
-    </Layout>
+        </div>
+      <Footer />
+    </div>
   )
 }
 

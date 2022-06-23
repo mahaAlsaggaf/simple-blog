@@ -1,7 +1,4 @@
 import React from "react";
-import Container from '../Container'
-
-
 // components
 
 export default function HeaderHome() {
@@ -11,7 +8,7 @@ export default function HeaderHome() {
         {/* Hero Section */}
         <section className="bg-image img-fluid bg-overlay">
           {/* Flex Container */}
-          <Container>
+          <div className="py-5 container">
             <div className="p-4 p-md-5 mt-5 text-white">
               <div className="row">
                 <div className="col-md-6 px-0 ">
@@ -26,7 +23,7 @@ export default function HeaderHome() {
                 </div>
               </div>
             </div>
-          </Container>
+          </div>
         </section>
     </>
   );
