@@ -1,23 +1,21 @@
 import Image from 'next/image'
 
 export default function Avatar({ author }) {
-  const name = author
-    ? author.node.firstName && author.node.lastName
-      ? `${author.node.firstName} ${author.node.lastName}`
-      : author.node.name
-    : null
+
 
   return (
-    <div className="flex items-center">
-      <div className="w-12 h-12 relative mr-4">
+    <div className="d-flex items-center mt-4">
+      <div className="relative">
         <Image
-          src={author.node.avatar.url}
-          layout="fill"
-          className="rounded-full"
-          alt={name}
+          src="/images/avatar.png"
+          className="rounded d-inline"
+          width="24px"
+          height="24px"
         />
       </div>
-      <div className="text-xl font-bold">{name}</div>
+      <p className="text-white relative mx-1">بواسطة: ابو جود</p>
+      <span style={{color:"#fff"}} className="h-50 vr mx-2 "></span>
+      <p className="text-white relative mx-1">منذ ١٤/٠٤/٢٠٢٢</p>
     </div>
   )
 }

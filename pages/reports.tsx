@@ -1,7 +1,6 @@
 import Head from 'next/head'
-import Container from '../components/container'
+import Container from '../components/Container'
 import { MdKeyboardArrowLeft } from 'react-icons/md';
-import Link from 'next/link'
 
 // import MoreStories from '../components/more-stories'
 import PostUpperImage from '../components/Posts/PostUpperImage'; 
@@ -26,39 +25,20 @@ export default function Reports({allPosts}) {
       <Container>
         {/* // the most reading posts // pass three posts values  */}
         <section className="section">
-            <div className="relative container mx-auto p-6 text-darkgray">
-                <div className="flex justify-center">
+            <div className="relative container mx-auto my-5">
+                <div className="text-center">
                     <h1 className="text-black text-4xl"> التقارير والدراسات </h1>
                     {/* TODO add the link of most reading posts */}
                 </div>
             </div>
             {/* TODO  Fix this */}
-            
-            <div className="container mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div className="flex justify-center text-6xl border-2 border-gray-300 rounded-xl p-6 bg-gray-100">1</div>
-                <div className="flex justify-center text-6xl border-2 border-gray-300 rounded-xl p-6 bg-gray-100">2</div>
-                <div className="flex justify-center text-6xl border-2 border-gray-300 rounded-xl p-6 bg-gray-100">3</div>
-                <div className="flex justify-center text-6xl border-2 border-gray-300 rounded-xl p-6 bg-gray-100">4</div>
-              </div>
-            </div>
-            {/* <div className="relative container mx-auto">
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <div className="relative container mx-auto">
+              <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 <PostUpperImage
                       posts = {posts.slice(0, 9)}
                   />
               </div>
-            </div> */}
-              {/* <div className="container mx-auto sm:flex-wrap md:flex space-y-6">
-                <PostUpperImage
-                      posts = {posts.slice(3, 6)}
-                  />
-              </div>
-              <div className="container mx-auto sm:flex-wrap md:flex space-y-6">
-                <PostUpperImage
-                      posts = {posts.slice(6, 9)}
-                  />  
-            </div>*/}
+            </div>
         </section> 
       </Container>
     </Layout>

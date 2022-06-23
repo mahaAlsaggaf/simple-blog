@@ -6,11 +6,11 @@ import Footer from "../Footers/Footer";
 
 export default function Layout({ children }){
   return (
-    <body dir="rtl" className="font-dinnextltarabic bg-verylightergray">
+    <div style={{background: "#FCFCFC"}} dir="rtl" className="font-dinnextltarabic">
         <div id="page-transition"></div>
         <Navbar />
         {children}
         <Footer />
-    </body>
+    </div>
 );
 }

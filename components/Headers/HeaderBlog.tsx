@@ -1,18 +1,53 @@
 
 import {BiHomeAlt} from 'react-icons/bi';
 import Link from 'next/link';
+import Container from '../Container'; 
+import Avatar from '../../components/Avatar'
+
+
 
 
 export default function HeaderBlog({post, location} ) {
     return ( 
       <>
-      {/* Header */}
-        {/* Hero Section */}
-        <section id="hero">
-          {/* Flex Container */}
+      <section className="bg-image img-fluid post-page-bg-overlay">
+        {/* Flex Container */}
+        <Container>
+          <div className="p-4 p-md-5 mt-5 text-white">
+            <div className="row">
+                <div className="col d-flex flex-column position-static">
+                  <p className="text-white d-inline-block mb-2 text-sm">
+                    <Link  href="/" >
+                          <a className="inline teal text-sm">  
+                            <BiHomeAlt className="teal inline align-baseline" size='14'/> الرئيسية  
+                          </a>
+                    </Link>
+                      / المقالات
+                  </p>
+                  <h2 className="mb-0">
+                  أصبحت تغليف المنتجات أكثر أهمية من أي وقت مضى
+                    {/* <Link href={`/posts/${post.postId}`}>
+                      <a
+                        className="hover:underline hover:text-teal"
+                        dangerouslySetInnerHTML={{ __html: post.postTitle }}
+                      />
+                    </Link> */}
+                  </h2>
+                  {/* <p className="card-text my-2"  
+                    dangerouslySetInnerHTML={{ __html: post.postExcerpt }}>
+                  </p> */}
+                    <Avatar author={post.postAuthor}/>
+                    
+                 
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+        {/* <section id="hero">
           <div
             className="relative pt-16 pb-32 flex ">
-            {/* Background image */}
             <div
                 className="absolute top-0 w-full h-full bg-center bg-cover"
                 style={{
@@ -24,11 +59,9 @@ export default function HeaderBlog({post, location} ) {
               id="blackOverlay"
               className="top-0 w-full h-full absolute bg-gradient-to-b from-lightgray via-darkgray to-black opacity-75 "
             ></span>
-            {/* Text item */}
             <div className="container relative mx-auto">
               <div className="items-center flex flex-wrap">
                 <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-start ">
-                    {/* pages tree */}
                     <div className="text-xs">
                         <Link  href="/" >
                           <a className="inline text-teal hover:text-white hover:underline">  
@@ -37,19 +70,15 @@ export default function HeaderBlog({post, location} ) {
                         </Link>
                         /<p> {location}</p>
                     </div>
-                    {/* post title  */}
                     <h1 className="text-white text-5xl ">
                     {post.postTitle}
                     </h1>
 
-                    {/* post author avatar  */}
 
                   
-                    {/* post author  */}
                     <p className="text-white text-xs ">
-                    {post.postDate} منذ: | {post.postAuthor}بواسطة : 
+                    {post.postDate} منذ: <div className="vr"></div> {post.postAuthor}بواسطة : 
                     </p>
-                    {/* post date  */}
 
 
                     
@@ -58,7 +87,7 @@ export default function HeaderBlog({post, location} ) {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
     </>
   );
 }

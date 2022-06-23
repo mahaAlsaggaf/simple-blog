@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Container from '../components/container'
+import Container from '../components/Container'
 import { MdKeyboardArrowLeft } from 'react-icons/md';
 import Link from 'next/link'
 
@@ -29,59 +29,70 @@ export default function Index({ allPosts}) {
     //   <></>
     <Layout>
       <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Simple Next.js Blog The Presents Scraped Data from {SITE_NAME}</title>
       </Head>
         {/* // the hero header // pass the value of the first post only  */}
         <HeaderHome />
       <Container>
         {/* // the most reading posts // pass three posts values  */}
-        <section>
-            <div className="relative container mx-auto p-6 text-darkgray">
-                <div className="flex justify-between">
-                    <span className="text-darkgray text-xl"> الأكثر قراءة </span>
+        <section className="section">
+            <div className="container mb-2">
+                <div className="d-flex justify-content-between">
+                    <span className="darkgray text-xl"> الأكثر قراءة </span>
                     {/* TODO add the link of most reading posts */}
                     <Link href="/">
-                        <a href="#" className="inline text-darkgray text-sm active:underline-offset-8 active:underline active:text-teal hover:underline-offset-8 hover:underline hover:text-teal">  عرض المزيد <MdKeyboardArrowLeft className="inline" size='10'/> </a>   
+                        <a href="#" className="inline darkgray text-sm active:underline-offset-8 active:underline active:text-teal hover:underline-offset-8 hover:underline hover:text-teal">  عرض المزيد <MdKeyboardArrowLeft className="teal inline" size='10'/> </a>   
                     </Link>
 
                 </div>
             </div>
-            <div className="container mx-auto sm:flex-wrap md:flex">
+            <div className="relative container mx-auto">
+              <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
                 <PostSquaredImage
                     mostReadPosts = {posts.slice(0, 3)}
                 />
+              </div>
             </div>
         </section>
         {/* // second section  */}
         <section className="section">
-          <div className="container mx-auto sm:flex-wrap md:flex">
-              <div className="lg:w-1/2 w-full  h-fullmb-10 lg:mb-0 rounded-sm overflow-hidden">
-                  <PostUpperImage
-                    posts = {posts.slice(0, 1)} 
-                  />
+          <div className="relative container mx-auto">
+            <div className="row row-cols-md-2 g-4">
+              <PostUpperImage
+                posts = {posts.slice(0, 1)} 
+              />
+              <div className="cols">
+                <PostSideImage 
+                    posts = {posts.slice(0, 3)} 
+                />
               </div>
-              <div className="flex flex-col py-px pr-4 lg:w-1/2 lg:pl-12 lg:text-right text-center">
-                    <PostSideImage 
-                        posts = {posts.slice(0, 3)} 
-                    />
-              </div>
+            </div>
           </div>
         </section>
         {/* // section seprator  */}
         <section className="section">
-          <SectionSeparator/>
+           <div className="relative container mx-auto">
+             <div className="row">
+                <SectionSeparator/>
+             </div>
+          </div>
         </section>
         {/* // third section  */}
         <section className="section">
-          <PostBannerImage
-            posts = {posts.slice(0, 1)} 
-          />
+           <div className="relative container mx-auto">
+             <div className="row g-4">
+                <PostBannerImage
+                  posts = {posts.slice(0, 1)} 
+                />
+             </div>
+          </div>
         </section>
         {/* // fourth section  */}
-        <section id="hero">
+        <section className="section">
           {/* Flex Container */}
-          <div className="container py-24 mx-auto">
-            <div className="sm:flex-wrap md:flex">
+          <div className="relative container mx-auto">
+            <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
               <PostUpperImage
                       posts = {posts.slice(0, 4)} 
                     />
@@ -91,23 +102,20 @@ export default function Index({ allPosts}) {
         {/* // fifth section  */}
 
         <section className="section">
-          <div className="container mx-auto flex flex-wrap">
-              <div className="lg:w-1/3 w-full  h-fullmb-10 lg:mb-0 rounded-sm overflow-hidden">
-                  <PostText 
-                    posts = {posts.slice(0, 3)} 
-                  />
-                  
+          <div className="relative container mx-auto">
+            <div className="row row-cols-md-2">
+              <div className="cols">
+                <PostText 
+                  posts = {posts.slice(0, 3)} 
+                />
               </div>
-              <div className="lg:w-2/3 w-full  h-fullmb-10 lg:mb-0 rounded-sm overflow-hidden">
-                <PostSquaredImage
-                    mostReadPosts = {posts.slice(0, 1)} 
-                  />
-              </div>
+              <PostSquaredImage
+                  mostReadPosts = {posts.slice(0, 1)} 
+                />
+            </div>
           </div>
         </section>
 
-          
-        
       </Container>
     </Layout>
   )

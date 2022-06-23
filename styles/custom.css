@@ -1,0 +1,133 @@
+@font-face {
+    font-family: "dinnextltarabic";
+    src: url("../public/fonts/dinnextltarabicregular.woff2");
+}
+
+body{
+    font-family: 'dinnextltarabic';
+}
+.bg-overlay {
+    background: linear-gradient(rgba(148, 146, 146, 0.7), rgba(0, 0, 0, 0.9)), url("https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: auto;
+    padding-top: 50px;
+}
+
+.post-page-bg-overlay {
+    background: url("/images/blog-header-image.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: auto;
+}
+
+/* TODO Fix this */
+.post-bg-overlay {
+    background-repeat: no-repeat!important;
+    background-size: contain!important;
+    background-position: center center!important;
+}
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 3px solid #cccccc;
+}
+
+section {
+    margin-bottom: 2.5rem;
+}
+.vr{
+    color: #5DD5C4;
+    opacity: 100%;
+    width: 2px;
+    margin-left: 0.5rem;
+}
+
+.foorter-vr{
+    color: 808686; 
+    height: 50px; 
+}
+
+button.bg-orange{
+    background: #FF9F4B;
+}
+button.bg-orange:hover{
+    background: #5DD5C4;
+}
+button.bg-teal{
+    background: #5DD5C4;
+}
+button.bg-teal:hover{
+    background: #FF9F4B;
+}
+
+.circle {
+    border-radius: 50%;
+    vertical-align: middle;
+    padding-bottom: 0.5rem;
+}
+
+a{
+    text-decoration: none;
+}
+h5 >a{
+    color: #202221; 
+}
+.nav-link, h6 >a{
+    color: #404343; 
+}
+p{
+  color: #808686; 
+  font-weight: 100;
+}
+p .text-white{
+    font-weight: 100;
+}
+.post-bg-overlay> .card-body >h5 >a,
+.post-bg-overlay> .card-body >h6 >a,
+.post-bg-overlay> .card-body >h6,
+.post-bg-overlay> .card-body >p{
+    color: #fff; 
+}
+.nav-link:hover, a:hover{
+    text-decoration: underline;
+    color: #5DD5C4!important;
+}
+.gray{
+    color: #808686; 
+}
+.darkgray{
+    color: #404343; 
+}
+.black{
+    color: #202221; 
+}
+.teal{
+    color: #5DD5C4;
+}
+.size-full{
+    width: 100%;
+    margin-top: 1rem;
+}
+.header-content {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  
+/* 
+  colors: {
+    black: '#202221',
+    darkgray: '#404343', 
+    gray:'#808686',
+    lightgray: '#EDEEED',
+    lightergray: '#F7F7F7',
+    verylightergray: '#FCFCFC',
+    white: '#FFFFFF', 
+    teal: '#5DD5C4',
+    orange: '#FF9F4B',
+    }, */

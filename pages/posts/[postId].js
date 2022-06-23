@@ -1,10 +1,12 @@
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import Head from 'next/head'
-import Container from '../../components/container'
+import Container from '../../components/Container'
 import Layout from '../../components/Layouts/Layout'; 
 import PostBody from '../../components/PostBody'; 
 import HeaderBlog from '../../components/Headers/HeaderBlog'; 
+import CommentList from '../../components/Comments/CommentList'; 
+
 
 
 
@@ -25,33 +27,13 @@ export default function Post({ post }) {
         <title>Simple Next.js Blog The Presents Scraped Data from {SITE_NAME}</title>
       </Head>
         {/* // the hero header // pass the value of the first post only  */}
-        <HeaderBlog  post={post} />
+        <HeaderBlog post={post} />
         <Container>
         {router.isFallback ? (
           <h1>Loading…</h1>
         ) : (
           <>
-            <article>
-                <title>
-                  {/* {post.title} | Scraped Data from {SITE_NAME} */}
-                </title>
-                {/* <meta
-                  property="og:image"
-                  content={post.featuredImage?.sourceUrl}
-                /> */}
-              {/* <PostHeader
-                title={post.title}
-                coverImage={post.featuredImage}
-                date={post.date}
-                author={post.author}
-                categories={post.categories}
-              /> */}
-              <PostBody content={post.postContent} />
-            
-            </article>
-
-            {/* <SectionSeparator /> */}
-            {/* {morePosts.length > 0 && <MoreStories posts={morePosts} />} */}
+            <PostBody content={post.postContent} /> 
           </>
         )}
       </Container>

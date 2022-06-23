@@ -5,68 +5,54 @@ import { BsMoon, BsSearch } from 'react-icons/bs';
 import useDarkMode from '../../hooks/useDarkMode.js';
 
 
+
 // components
 
 export function DesktopNavigation(props) {
-  const [navbarOpen, setNavbarOpen] = React.useState(false);
+
+  const [collapseClass, setcollapseClass] = useState("collapse navbar-collapse");
+
+  const handleCollapsepButtonClick = (async) => {
+     if (collapseClass == "show collapse navbar-collapse"){
+      setcollapseClass("collapse navbar-collapse"); 
+     }else{
+      setcollapseClass("show collapse navbar-collapse" ); 
+     }
+  };
+  
   return (
     <>
     {/* Nav bar  */}
-    <nav className="relative container mx-auto p-6 text-darkgray bg-white">
-          {/* Flex container */}
-          <div className="flex items-center justify-around">
-            {/* Logo */}
-            <div className="pt-2">
-                <img src="/images/logo-light-mood.png" width="90px" height="30px" alt="" />
-              </div>
-           
-            
-            {/* Menu Items */}
-            
-            <div className="hidden space-x-6 md:flex">
-                <Link href="/">
-                    <a href="#" className="text-darkgray active:underline-offset-8 active:underline active:text-teal hover:underline-offset-8 hover:underline hover:text-teal text-base font-medium"> الرئيسية </a>
-                </Link>
-                <Link href="/reports">
-                    <a href="#" className="text-darkgray active:underline-offset-8 active:underline active:text-teal hover:underline-offset-8 hover:underline hover:text-teal text-base font-medium"> التقارير والدراسات </a>
-                </Link>
-                <Link href="/posts">
-                    <a href="#" className="text-darkgray active:underline-offset-8 active:underline active:text-teal hover:underline-offset-8 hover:underline hover:text-teal text-base font-medium"> المقالات </a>
-                </Link>
-            </div>
+    <nav className="navbar navbar-expand-lg navbar-light bg-white">
+      <div className="container">
+        <Link href="/">
+          <a href="/" className="navbar-brand">
+              <img src="/images/logo-light-mood.png" width="90px" height="30px" alt="" />
+          </a>
+        </Link>
+        <button onClick={handleCollapsepButtonClick} className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
 
-            {/* Hamburger Icon */}
-            <button
-              id="menu-btn"
-              className="block hamburger md:hidden focus:outline-none"
-            >
-              <span className="hamburger-top"></span>
-              <span className="hamburger-middle"></span>
-              <span className="hamburger-bottom"></span>
-            </button>
-
-             {/* Buttons */}
-             <ul className="hidden md:flex">
-                <li className='rounded-full ring-1 ring-lightgray my-auto p-2 mx-1'><a className='bg-lightergray text-secondary'> <BsMoon size='10'/></a></li>
-                <li className='rounded-full ring-1 ring-lightgray my-auto p-2 mx-1'><a className='bg-lightergray text-secondary'> <BsSearch size='10'/></a></li>
-            </ul>
-              
+        <div className={collapseClass} id="navbarsExample07">
+          <ul className="text-center navbar-nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+              <Link href="/"><a className="nav-link" aria-current="page" href="#">الرئيسية</a></Link>
+            </li>
+            <li className="nav-item">
+              <Link href="/reports"><a className="nav-link" href="#">التقارير والدراسات</a></Link>
+            </li>
+            <li className="nav-item">
+              <Link href="/archive"><a className="nav-link">المقالات</a></Link>
+            </li>
+          </ul>
+          <div className="text-center text-lg-end">
+            <button type="button" className="mx-1 circle btn btn-outline-light text-secondary"><BsMoon className="" size='14'/></button>
+            <button type="button" className="mx-1 circle btn btn-outline-light text-secondary"><BsSearch className="" size='14'/></button>
           </div>
-
-          {/* Mobile Menu */}
-          <div className="md:hidden">
-            <div
-              id="menu"
-              className="absolute flex-col items-center hidden self-end py-8 mt-10 space-y-6 font-bold bg-darkgray sm:w-auto sm:self-center left-6 right-6 drop-shadow-md"
-            >
-                <a href="#" className="text-darkgray active:underline-offset-8 active:underline active:text-teal hover:underline-offset-8 hover:underline hover:text-teal text-base font-medium"> المقالات </a>
-                <a href="#" className="text-darkgray active:underline-offset-8 active:underline active:text-teal hover:underline-offset-8 hover:underline hover:text-teal text-base font-medium"> التقارير والدراسات </a>
-                <a href="#" className="text-darkgray active:underline-offset-8 active:underline active:text-teal hover:underline-offset-8 hover:underline hover:text-teal text-base font-medium"> الرئيسية </a>
-
-            </div>
-          </div>
-         
-        </nav>
+        </div>
+      </div>
+    </nav>
     </>
   );
 };
@@ -113,13 +99,13 @@ const Pages = () => (
   <ul className="items-right content-start lg:justify-center md:justify-end navbar-nav md:flex">
     {/* <!-- flex flex-row mx-auto my-0 navbar-nav --> */}
     <li className="nav-item active">
-      <a href="#" className="mx-2 text-darkgray active:underline-offset-8 active:underline active:text-teal hover:underline-offset-8 hover:underline hover:text-teal text-base font-medium"> المقالات </a>
+      <a href="#" className="mx-2 darkgray active:underline-offset-8 active:underline active:text-teal hover:underline-offset-8 hover:underline hover:text-teal text-base font-medium"> المقالات </a>
     </li>
     <li className="nav-item">
-      <a href="#" className="mx-2 text-darkgray active:underline-offset-8 active:underline active:text-teal hover:underline-offset-8 hover:underline hover:text-teal text-base font-medium"> التقارير والدراسات </a>
+      <a href="#" className="mx-2 darkgray active:underline-offset-8 active:underline active:text-teal hover:underline-offset-8 hover:underline hover:text-teal text-base font-medium"> التقارير والدراسات </a>
     </li>
     <li className="nav-item">
-      <a href="#" className="mx-2 text-darkgray active:underline-offset-8 active:underline active:text-teal hover:underline-offset-8 hover:underline hover:text-teal text-base font-medium"> الرئيسية </a>
+      <a href="#" className="mx-2 darkgray active:underline-offset-8 active:underline active:text-teal hover:underline-offset-8 hover:underline hover:text-teal text-base font-medium"> الرئيسية </a>
     </li>
                                 
   </ul>
