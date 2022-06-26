@@ -128,17 +128,4 @@ p .text-white{
     position: absolute;
     bottom: 0;
     right: 0;
-  }
-  
-/* 
-  colors: {
-    black: '#202221',
-    darkgray: '#404343', 
-    gray:'#808686',
-    lightgray: '#EDEEED',
-    lightergray: '#F7F7F7',
-    verylightergray: '#FCFCFC',
-    white: '#FFFFFF', 
-    teal: '#5DD5C4',
-    orange: '#FF9F4B',
-    }, */
+}

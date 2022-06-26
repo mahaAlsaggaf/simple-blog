@@ -1,12 +1,6 @@
 import React, {useState} from "react";
-import Image from 'next/image'
 import Link from 'next/link'
 import { BsMoon, BsSearch } from 'react-icons/bs';
-import useDarkMode from '../../hooks/useDarkMode.js';
-
-
-
-// components
 
 export function DesktopNavigation(props) {
 
@@ -70,60 +64,8 @@ export function DesktopNavigation(props) {
 };
 
 
-// set up the dark mood effect
-const ThemeIcon = () => {
-  const [darkTheme, setDarkTheme] = useDarkMode();
-  const handleMode = () => setDarkTheme(!darkTheme);
-  return (
-    <span onClick={handleMode}>
-      {darkTheme ? (
-        <BsMoon size='24' className='top-navigation-icon' />
-      ) : (
-        <BsMoon size='24' className='top-navigation-icon' />
-      )}
-    </span>
-  );
-};
+   
 
-// define the search popup element
-const Search = () => (
-  <div className='search'>
-    <input className='search-input' type='text' placeholder='Search...' />
-    {/* <FaSearch size='18' className='text-secondary my-auto' /> */}
-  </div>
-);
-
-// define the logo
-const Logo = () => (
-  <a className="justify-start navbar-brand">
-    <Image
-            priority
-            className="h-8 w-auto sm:h-10"
-            src="/images/logo-light-mood.png"
-            height={30}
-            width={90}
-          />
-  </a>
-);
-// define the pages list 
-const Pages = () => (
-
-  <ul className="items-right content-start lg:justify-center md:justify-end navbar-nav md:flex">
-    {/* <!-- flex flex-row mx-auto my-0 navbar-nav --> */}
-    <li className="nav-item active">
-      <a href="#" className="mx-2 darkgray active:underline-offset-8 active:underline active:text-teal hover:underline-offset-8 hover:underline hover:text-teal text-base font-medium"> المقالات </a>
-    </li>
-    <li className="nav-item">
-      <a href="#" className="mx-2 darkgray active:underline-offset-8 active:underline active:text-teal hover:underline-offset-8 hover:underline hover:text-teal text-base font-medium"> التقارير والدراسات </a>
-    </li>
-    <li className="nav-item">
-      <a href="#" className="mx-2 darkgray active:underline-offset-8 active:underline active:text-teal hover:underline-offset-8 hover:underline hover:text-teal text-base font-medium"> الرئيسية </a>
-    </li>
-                                
-  </ul>
-              
-  
-  );
 export default DesktopNavigation;
 
 

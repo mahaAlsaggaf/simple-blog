@@ -1,8 +1,5 @@
 import React from "react";
-// import SectionSeparator from '../../components/SectionSeparator';
 import Link from 'next/link'
-
-
 
 export default function PostText({posts}) {
     return (

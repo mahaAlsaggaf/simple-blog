@@ -1,11 +1,6 @@
 import React from "react";
 import Link from 'next/link'
 
-
-
-// components
-
-// blogContent: blogs[i].blogContent,
 export default function PostSquaredImage({
   mostReadPosts
 }) {

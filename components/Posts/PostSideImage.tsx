@@ -2,9 +2,6 @@ import React from "react";
 import Link from 'next/link'
 
 
-
-// components
-
 export default function PostSideImage({posts}) {
   return (
     <>

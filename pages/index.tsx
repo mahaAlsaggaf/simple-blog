@@ -1,25 +1,16 @@
 import Head from 'next/head'; 
-// import Container from '../components/Container'; 
 import { MdKeyboardArrowLeft } from 'react-icons/md';
 import Link from 'next/link'
-
 import PostSquaredImage from '../components/Posts/PostSquaredImage'; 
 import PostSideImage from '../components/Posts/PostSideImage'; 
 import PostUpperImage from '../components/Posts/PostUpperImage'; 
 import PostBannerImage from '../components/Posts/PostBannerImage'; 
 import PostText from '../components/Posts/PostText'; 
-
 import Navbar from "../components/Navbars/DesktopNavigation";
 import Footer from "../components/Footers/Footer";
-
-
 import SectionSeparator from '../components/SectionSeparator';
-
-
 import HeaderHome from '../components/Headers/HeaderHome';
-
-// import Layout from '../components/Layouts/Layout'; 
-import { getBlogPosts, getMostReadPosts } from '../lib/api'
+import { getBlogPosts } from '../lib/api'
 import { SITE_NAME } from '../lib/constants'
 
 export default function Index({ allPosts}) {
@@ -28,8 +19,6 @@ export default function Index({ allPosts}) {
   // const mostReadPosts = mostReadPosts; 
 
   return (
-    //   <></>
-    // <Layout>
     <div style={{background: "#FCFCFC"}} dir="rtl" className="font-dinnextltarabic">
         <div id="page-transition"></div>
         <Navbar />
@@ -37,13 +26,13 @@ export default function Index({ allPosts}) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Simple Next.js Blog The Presents Scraped Data from {SITE_NAME}</title>
       </Head>
-        {/* // the hero header // pass the value of the first post only  */}
-        <HeaderHome />
-      <div className="py-5 container">        {/* // the most reading posts // pass three posts values  */}
+      <HeaderHome />
+      <div className="py-5 container">        
+      {/* // the most reading posts // pass three posts values  */}
         <section className="section">
             <div className="container mb-2">
                 <div className="d-flex justify-content-between">
-                    <span className="darkgray text-xl"> الأكثر قراءة </span>
+                    <h4 className="darkgray text-xl"> الأكثر قراءة </h4>
                     {/* TODO add the link of most reading posts */}
                     <Link href="/">
                         <a href="#" className="inline darkgray text-sm active:underline-offset-8 active:underline active:text-teal hover:underline-offset-8 hover:underline hover:text-teal">  عرض المزيد <MdKeyboardArrowLeft className="teal inline" size='10'/> </a>   

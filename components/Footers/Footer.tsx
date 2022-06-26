@@ -4,8 +4,6 @@ import { FiTwitter, FiInstagram, FiFacebook } from 'react-icons/fi';
 import { GoMail } from 'react-icons/go';
 
 
-
-
 export default function Footer() {
   return ( 
     <>
@@ -18,7 +16,7 @@ export default function Footer() {
                 </h5>
               </div>
               <div className="flex flex-row justify-center items-center">
-                <p className="small text-gray text-sm md:ml-6 md:mt-0 mb-2 text-center">
+                <p className="small text-gray text-sm md:ml-6 md:mt-0 my-3 text-center">
                   وكن أول من يعلم عن كل جديد في عالم التجارة الإلكترونية              
                 </p>
               </div> 
@@ -42,9 +40,9 @@ export default function Footer() {
                 </div>
                 <div className="col-lg-4 col-sm-12 text-center" >
                   <div className="d-lg-inline d-md-inline">
-                    <a className='mx-1 circle btn btn-outline-light text-secondary'> <GoMail size='16' /></a>
+                    <a className='mx-1 circle btn btn-outline-light text-secondary'><GoMail size='16' /></a>
                     <a className='mx-1 circle btn btn-outline-light text-secondary'><FiFacebook size='16' /></a>
-                    <a className='mx-1 circle btn btn-outline-light text-secondary'> <FiInstagram size='16'/></a>
+                    <a className='mx-1 circle btn btn-outline-light text-secondary'><FiInstagram size='16'/></a>
                     <a className='mx-1 circle btn btn-outline-light text-secondary'><FiTwitter size='16'/></a>
                   </div>
                   <div className="d-lg-inline d-md-inline my-3"> 

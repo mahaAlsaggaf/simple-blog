@@ -3,9 +3,6 @@ import {BiHomeAlt} from 'react-icons/bi';
 import Link from 'next/link';
 import Avatar from '../../components/Avatar'
 
-
-
-
 export default function HeaderBlog({post, location} ) {
     return ( 
       <>
@@ -31,19 +28,12 @@ export default function HeaderBlog({post, location} ) {
                       />
                     </Link>
                   </h2>
-                  {/* <p className="card-text my-2"  
-                    dangerouslySetInnerHTML={{ __html: post.postExcerpt }}>
-                  </p> */}
                     <Avatar author={post.postAuthor}/>
-                    
-                 
               </div>
             </div>
           </div>
         </div>
-      </section>
-
-               
+      </section>       
     </>
   );
 }
