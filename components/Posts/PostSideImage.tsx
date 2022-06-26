@@ -6,7 +6,7 @@ export default function PostSideImage({posts}) {
   return (
     <>
       {posts.map((post) => (
-        <div className="row g-0 border-0 rounded overflow-hidden mb-2 position-relative">
+        <div key={post.postId} className="row g-0 border-0 rounded overflow-hidden mb-2 position-relative">
           <div className="col-auto d-none d-lg-block">
             <Link href={`/posts/${post.postId}`}>
               <a>

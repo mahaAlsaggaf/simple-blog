@@ -5,7 +5,7 @@ export default function PostUpperImage({posts}) {
   return (
     <>
       {posts.map((post) => (
-        <div className="col mb-2"> 
+        <div key={post.postId} className="col mb-2"> 
           <div className="bg-image card border-0 h-100">
             <Link href={`/posts/${post.postId}`}>
               <a>

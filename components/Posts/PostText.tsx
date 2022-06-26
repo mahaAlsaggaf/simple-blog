@@ -5,7 +5,7 @@ export default function PostText({posts}) {
     return (
       <>
         {posts.map((post) => (
-        <div className="row g-0 border-0 rounded overflow-hidden mb-2 position-relative">
+        <div key={post.postId} className="row g-0 border-0 rounded overflow-hidden mb-2 position-relative">
           <div className="col p-4 d-flex flex-column position-static">
             <h6 className="d-inline-block mb-2 text-primary">
               <span className="vr"></span>

@@ -6,6 +6,10 @@
 body{
     font-family: 'dinnextltarabic';
 }
+.navbar-nav {
+    padding-left: 0;
+    padding-right: 0;
+}
 .bg-overlay {
     background: linear-gradient(rgba(148, 146, 146, 0.7), rgba(0, 0, 0, 0.9)), url("https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80");
     background-repeat: no-repeat;
@@ -128,4 +132,18 @@ p .text-white{
     position: absolute;
     bottom: 0;
     right: 0;
+}
+input:invalid[focused="true"]{
+    border: 1px solid red;
+}
+
+input:invalid[focused="true"] ~ span{
+    display: block;
+}
+
+span.error{
+    font-size: 12px;
+    padding: 3px;
+    color: red;
+    display: none;
 }

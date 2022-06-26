@@ -6,7 +6,7 @@ export default function PostBannerImage({posts}) {
   return (
     <>
           {posts.map((post) => (
-            <div className="col">
+          <div key={post.postId} className="col">
             <div className="bg-image img-fluid post-bg-overlay" style={{
               background:`linear-gradient(rgba(148, 146, 146, 0.7), rgba(0, 0, 0, 0.9)),url(${post.postItemImg})`}}> 
               <div className="container p-lg-5 mx-lg-5">

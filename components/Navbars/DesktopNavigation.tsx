@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import Link from 'next/link'
 import { BsMoon, BsSearch } from 'react-icons/bs';
 
-export function DesktopNavigation(props) {
+export function DesktopNavigation() {
 
   const [collapseClass, setcollapseClass] = useState("collapse navbar-collapse");
   const [darkMoodClass, setdarkMoodClass] = useState("navbar navbar-expand-lg navbar-light bg-white");
@@ -36,12 +36,12 @@ export function DesktopNavigation(props) {
               <img src={darkMoodLogoPath} width="90px" height="30px" alt="" />
           </a>
         </Link>
-        <button onClick={handleCollapsepButtonClick} className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+        <button onClick={handleCollapsepButtonClick} className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="" aria-controls="" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div className={collapseClass} id="navbarsExample07">
-          <ul className="text-center navbar-nav mb-2 mb-lg-0">
+        <div className={collapseClass}>
+          <ul className="text-center navbar-nav mb-2 mb-lg-0 py-lg-3 px-lg-5">
             <li className="nav-item">
               <Link href="/"><a className="nav-link" aria-current="page" href="#">الرئيسية</a></Link>
             </li>
