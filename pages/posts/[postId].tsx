@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import Head from 'next/head'
 import PostBody from '../../components/PostBody'; 
-
+import HeaderBlog from '../../components/Headers/HeaderBlog'; 
 
 import Navbar from "../../components/Navbars/DesktopNavigation";
 import Footer from "../../components/Footers/Footer";
@@ -25,6 +25,7 @@ export default function Post({ post }) {
       <Head>
         <title>Simple Next.js Blog The Presents Scraped Data from {SITE_NAME}</title>
       </Head>
+        <HeaderBlog post={post} /> 
         <div className="py-5 container">
             <PostBody content={post.postContent} /> 
       </div>

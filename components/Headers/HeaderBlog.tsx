@@ -3,7 +3,7 @@ import {BiHomeAlt} from 'react-icons/bi';
 import Link from 'next/link';
 import Avatar from '../../components/Avatar'
 
-export default function HeaderBlog({post, location} ) {
+export default function HeaderBlog({post} ) {
     return ( 
       <>
       <section className="bg-image img-fluid post-page-bg-overlay">
